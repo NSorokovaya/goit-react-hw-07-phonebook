@@ -1,8 +1,6 @@
 import css from './Filter.module.css';
 import { useDispatch } from 'react-redux';
-import {
-  changeFilter,
-} from "../../redux/contactSlice"
+import { filterContact } from '../../redux/contactSlice';
 
 
 
@@ -11,7 +9,7 @@ const Filter = () => {
 
   const onChangeFilter = (event) => {
     const { value: newSearchValue } = event.target;
-    dispatch(changeFilter(newSearchValue));
+    dispatch(filterContact (newSearchValue));
   }
 
   return (

@@ -1,11 +1,10 @@
-const contactSelectore = {
-  getContact: state => state.contacts.items,
-  getFilter: state => state.contacts.filter,
+export const contactSelector = {
+  getContact: state => state.phonebook.contacts.items,
+  getFilter: state => state.phonebook.contacts.filter,
+  getLoading: state => state.phonebook.contacts.isLoading,
   getFilteredContacts: state => {
-    return state.contacts.items.filter(contact =>
-      contact.name.toLowerCase().includes(state.contacts.filter.toLowerCase())
+    return state.phonebook.contacts.items.filter(contact =>
+      contact.name.toLowerCase().includes(state.phonebook.filter.toLowerCase())
     );
   },
 };
-
-export default contactSelectore;
